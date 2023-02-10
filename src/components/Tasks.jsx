@@ -12,7 +12,7 @@ export function Tasks() {
         </textarea>
 
         <footer>
-          <button type="submit"> Criar <PlusCircle size={16}/> </button>
+          <button type="submit"> Criar <PlusCircle size={20}/> </button>
         </footer>
       </form>
 
