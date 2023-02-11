@@ -10,6 +10,7 @@
   width: 39.8125rem;
   height: 3.37rem;
   resize: none;
+  outline: none;
 
   background-color: var(--gray-500);
   color: var(--gray-100);
@@ -39,6 +40,24 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.taskStatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-top: 3.25rem;
+}
+
+.created h1 {
+  color: var(--blue-dark);
+  font-size: 1rem;
+}
+
+.completed h1 {
+  color: var(--purple-dark);
+  font-size: 1rem;
 }
 
 .tasksForm footer button:hover{
