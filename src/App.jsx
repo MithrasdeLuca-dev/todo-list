@@ -1,5 +1,6 @@
 import { Header } from './components/Header';
-import { Tasks } from './components/Tasks';
+import { List } from './components/ListTasks';
+import {Tasks} from './components/Tasks'
 
 import styles from './App.module.css';
 
@@ -8,9 +9,10 @@ import './Global.css';
 export function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <div className={styles.wrapper}>
-      <Tasks/>
+        <Tasks/>
+        <List/>
       </div>
     </div >
   )

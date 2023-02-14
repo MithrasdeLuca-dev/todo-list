@@ -1,22 +1,21 @@
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   
   position: relative;
-
-  max-width: 70rem;
-  margin: -1.857rem auto;
+  max-width: 46rem;
+  margin: -1.685rem auto;
   padding: 0 1rem;
-  background-color:transparent;
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {
-  html{
+  html {
     font-size: 87.5%;
   }
-  .wrapper{
+
+  .wrapper {
     grid-template-columns: 1fr;
   }
 }
-
