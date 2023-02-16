@@ -1,8 +1,8 @@
 import styles from './Tasks.module.css/';
-import { PlusCircle } from 'phosphor-react';
+import { PlusCircle, ClipboardText } from 'phosphor-react';
 import { List } from './ListTasks';
 import { useState } from 'react';
-
+import uuidv4 from 'react-uuid';
 
 export function Tasks() {
   const [tasks, setTasks] = useState([])
@@ -22,6 +22,8 @@ export function Tasks() {
   }
 
   const isNewTaskEmpty = newTask.length === 0
+
+  const tasksIsEmpty = tasks.length === 0
 
   return (
     <section className={styles.tasks} >
@@ -48,12 +50,24 @@ export function Tasks() {
         </div>
       </div>
 
+      {tasksIsEmpty && (
+        <div className={styles.sidebarTask}>
+          <ClipboardText size={56} />
+          <p>
+            <strong>
+              Você ainda não tem tarefas cadastradas
+            </strong>
+            Crie tarefas e organize seus itens a fazer
+          </p>
+        </div>
+      )}
 
       <div className={styles.newTaskList}>
         {tasks.map(task => {
           return (
             <List
               content={task}
+              key={uuidv4()}
             />
           )
         })}
