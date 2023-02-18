@@ -11,9 +11,11 @@ export function List({ content }) {
             <input type="checkbox" name="" id="content" value={false} />
             <label htmlFor="content" className={styles.checkLabel}></label>
           </div>
-          <p>{content}</p>
+          <div className={styles.paragraph}>
+            <p>{content}</p>
+          </div>
           <footer>
-            <button className={styles.delete}><Trash size={24} /></button>
+            <button className={styles.delete}><Trash size={20} /></button>
           </footer>
         </div>
       )}

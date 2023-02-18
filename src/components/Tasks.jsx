@@ -29,6 +29,7 @@ export function Tasks() {
     <section className={styles.tasks} >
       <form onSubmit={handleCreateNewTask} className={styles.tasksForm}>
         <textarea
+        maxLength={200}
           value={newTask}
           name='task'
           onChange={handleNewTaskChange}
