@@ -1,15 +1,19 @@
 import styles from './ListTasks.module.css';
-import { Trash, Check } from 'phosphor-react';
+import { Trash, Check, Key } from 'phosphor-react';
 
-export function List({ content }) {
+export function List({ content, idTask}) {
 
   return (
     <div>
       {content && (
         <div className={styles.listTasks}>
           <div className={styles.checkList}>
-            <input type="checkbox" name="" id="content" value={false} />
-            <label htmlFor="content" className={styles.checkLabel}></label>
+          <input
+                type="checkbox"
+                name=""
+                id={idTask}
+                />
+            <label htmlFor={idTask}></label>
           </div>
           <div className={styles.paragraph}>
             <p>{content}</p>

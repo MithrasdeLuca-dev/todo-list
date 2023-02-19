@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.paragraph{
+.paragraph {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,21 +41,36 @@
   align-items: center;
 }
 
-.checkList input[type="checkbox"] {
-  display: none;
-}
 
 .checkList {
   padding: 1rem 0.75rem 2rem 1rem;
 }
 
-.checkList label {
-  display: flex;
+.checkList input[type="checkbox"] {
+  display: none;
+}
+
+.checkList label::before {
+  content: "";
+  display: block;
   align-items: center;
   justify-content: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
   border: 2px solid var(--blue);
+}
+
+.checkList input:checked+label::before {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' fill='%23f2f2f2' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72 104 184 48 128' fill='none' stroke='%23f2f2f2' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
