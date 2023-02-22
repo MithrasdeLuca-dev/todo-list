@@ -1,20 +1,26 @@
 import styles from './ListTasks.module.css';
-import { Trash, Check, Key } from 'phosphor-react';
+import { Trash } from 'phosphor-react';
 
-export function List({ content, idTask}) {
+export function List({ content, idTask, checkCompletedTask }) {
+
+  const handleCompletedTask = () => {
+    checkCompletedTask(idTask);
+  }
+
 
   return (
     <div>
       {content && (
         <div className={styles.listTasks}>
           <div className={styles.checkList}>
-          <input
-                type="checkbox"
-                name=""
-                id={idTask}
-                />
+            <input
+              onChange={handleCompletedTask}
+              type="checkbox"
+              id={idTask}
+            />
             <label htmlFor={idTask}></label>
           </div>
+
           <div className={styles.paragraph}>
             <p>{content}</p>
           </div>
@@ -25,4 +31,4 @@ export function List({ content, idTask}) {
       )}
     </div>
   )
-} 
+}

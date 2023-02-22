@@ -1,6 +1,5 @@
 import { Header } from './components/Header';
-import { List } from './components/ListTasks';
-import {Tasks} from './components/Tasks'
+import { Tasks } from './components/Tasks';
 
 import styles from './App.module.css';
 
@@ -12,8 +11,7 @@ export function App() {
       <Header />
       <div className={styles.wrapper}>
         <Tasks/>
-        <List/>
       </div>
     </div >
-  )
-}
+  );
+};
