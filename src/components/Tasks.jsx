@@ -2,7 +2,7 @@ import styles from './Tasks.module.css/';
 import { PlusCircle, ClipboardText } from 'phosphor-react';
 import { List } from './ListTasks';
 import { useState } from 'react';
-import uuidv4 from 'react-uuid';
+import { v4 as uuid } from 'uuid';
 
 export function Tasks() {
   const [tasks, setTasks] = useState([])
@@ -29,7 +29,7 @@ export function Tasks() {
     <section className={styles.tasks} >
       <form onSubmit={handleCreateNewTask} className={styles.tasksForm}>
         <textarea
-        maxLength={200}
+          maxLength={200}
           value={newTask}
           name='task'
           onChange={handleNewTaskChange}
@@ -62,13 +62,13 @@ export function Tasks() {
           </p>
         </div>
       )}
-
       <div className={styles.newTaskList}>
         {tasks.map(task => {
           return (
             <List
               content={task}
-              key={uuidv4()}
+              key={uuid()}
+              idTask={uuid()}
             />
           )
         })}
