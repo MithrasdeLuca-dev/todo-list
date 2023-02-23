@@ -8,15 +8,17 @@
   width: 100%;
 }
 
-.paragraph {
+.listTasks p{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.listTasks p {
   padding: 0.5rem 0;
   word-break: break-all;
+}
+
+p.textCompleted {
+  text-decoration: line-through;
+  color:var(--gray-300);
 }
 
 .listTasks footer button {

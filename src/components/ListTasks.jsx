@@ -24,9 +24,10 @@ export function List({ content, idTask, checkCompletedTask, isCompleted, onDelet
             <label htmlFor={idTask}></label>
           </div>
 
-          <div className={styles.paragraph}>
-            <p>{content}</p>
-          </div>
+          <p className={isCompleted ? styles.textCompleted : ""}>
+            {content}
+          </p>
+
           <footer>
             <button onClick={handleDeleteTask} className={styles.delete}><Trash size={20} id={idTask} /></button>
           </footer>
