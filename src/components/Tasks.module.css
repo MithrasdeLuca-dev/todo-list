@@ -11,7 +11,7 @@
   height: 3.37rem;
   resize: none;
   outline: none;
-  
+
   background-color: var(--gray-500);
   color: var(--gray-100);
   margin-right: 4px;
@@ -46,42 +46,81 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.5rem;
   margin-top: 3.25rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .created h1 {
-  color: var(--blue-dark);
+  text-align: center;
+  color: var(--blue);
+  opacity: 0.95;
   font-size: 1rem;
+}
+
+.created {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.created span {
+  color: var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  background-color: var(--gray-400);
+  margin-left: 8px;
+}
+
+.completed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed span {
+  color: var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  height: 1.4rem;
+  border-radius: 8px;
+  background-color: var(--gray-400);
+  margin-left: 8px;
 }
 
 .completed h1 {
-  color: var(--purple-dark);
+  color: var(--purple);
   font-size: 1rem;
+  opacity: 0.95;
+  text-align: center;
 }
 
-.tasksForm footer button:hover{
-background-color: var(--blue);
+.tasksForm footer button:hover {
+  background-color: var(--blue);
 }
 
-.sidebarTask svg{
+.sidebarTask svg {
   margin: 4rem 21.5rem 1rem;
   opacity: 0.3;
 }
 
-
-.sidebarTask p{
+.sidebarTask p {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
   margin: 0 1.5rem 4rem;
-  color:var(--gray-300);
+  color: var(--gray-300);
   opacity: 0.7;
   line-height: 1.4;
 }
 
-.sidebarTask{
+.sidebarTask {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,12 +155,24 @@ background-color: var(--blue);
     width: 30%;
   }
 
-  .tasksForm footer button svg{
+  .tasksForm footer button svg {
     margin-left: 0.3rem;
   }
 
   .tasksForm footer button {
     justify-content: center;
     height: 2.5rem;
+  }
+
+  .created span , .completed span{
+    margin-top: 0.5rem
+  }
+
+  .created, .completed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
   }
 }

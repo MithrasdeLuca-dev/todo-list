@@ -1,12 +1,15 @@
 import styles from './ListTasks.module.css';
 import { Trash } from 'phosphor-react';
 
-export function List({ content, idTask, checkCompletedTask }) {
+export function List({ content, idTask, checkCompletedTask, isCompleted, onDeleteTask }) {
 
   const handleCompletedTask = () => {
-    checkCompletedTask(idTask);
-  }
+    checkCompletedTask(idTask)
+  };
 
+  const handleDeleteTask = () => {
+    onDeleteTask(idTask)
+  };
 
   return (
     <div>
@@ -25,10 +28,10 @@ export function List({ content, idTask, checkCompletedTask }) {
             <p>{content}</p>
           </div>
           <footer>
-            <button className={styles.delete}><Trash size={20} /></button>
+            <button onClick={handleDeleteTask} className={styles.delete}><Trash size={20} id={idTask} /></button>
           </footer>
         </div>
       )}
     </div>
-  )
-}
+  );
+};
