@@ -10,7 +10,7 @@ export function Tasks() {
 
   const [newTask, setNewTask] = useState('');
 
-  function handleCreateNewTask() {
+  const handleCreateNewTask = () => {
     event.preventDefault()
 
     setTasks([
@@ -18,32 +18,39 @@ export function Tasks() {
         id: uuidv4(),
         content: newTask,
         isCompleted: false
-      }]);
-
+      }])
     setNewTask('')
   };
 
-  function handleNewTaskChange() {
-    event.target.setCustomValidity('');
-    setNewTask(event.target.value);
+  const handleNewTaskChange = () => {
+    event.target.setCustomValidity('')
+    setNewTask(event.target.value)
   };
 
-  function onCompletedTask(ITask, idTask) {
+  const onCompletedTask = (taskId,) => {
     const newCompletedTasks = tasks.map(task => {
-      if (task.id === idTask) {
-        task.isCompleted = !ITask.isCompleted
-        return task
+      if (task.id === taskId) {
+        task.isCompleted = !task.isCompleted
       }
-      return ITask
+      return task
     })
     setTasks(newCompletedTasks);
   };
 
-  const tasksQuantity = tasks.length
+  const deleteTask = (taskToDelete) => {
+    const taskWithoutDeleteOne = tasks.filter(task => {
+      return task.id !== taskToDelete
+    })
+    setTasks(taskWithoutDeleteOne);
+  };
 
-  const isNewTaskEmpty = newTask.length === 0
+  const newCompletedTasksList = tasks.reduce((acc, task) => acc + task.isCompleted, 0);
 
-  const tasksIsEmpty = tasks.length === 0
+  const tasksQuantity = tasks.length;
+
+  const isNewTaskEmpty = newTask.length === 0;
+
+  const tasksIsEmpty = tasks.length === 0;
 
   return (
     <section className={styles.tasks} >
@@ -64,11 +71,13 @@ export function Tasks() {
 
       <div className={styles.taskStatus}>
         <div className={styles.created}>
-          <h1>Tarefas criadas {tasksQuantity}</h1>
+          <h1>Tarefas criadas</h1>
+          <span>{tasksQuantity}</span>
         </div>
 
         <div className={styles.completed}>
-          <h1>Concluídas <label htmlFor="">{0 + ' de ' + 0}</label></h1>
+          <h1>Concluídas</h1>
+          <span>{newCompletedTasksList + ' de ' + tasksQuantity}</span>
         </div>
       </div>
 
@@ -92,11 +101,12 @@ export function Tasks() {
               key={task.id}
               idTask={task.id}
               isCompleted={task.isCompleted}
-              checkCompletedTasck={onCompletedTask}
+              onDeleteTask={deleteTask}
+              checkCompletedTask={onCompletedTask}
             />
           )
         }))}
       </div>
     </section>
-  )
-}
+  );
+};
