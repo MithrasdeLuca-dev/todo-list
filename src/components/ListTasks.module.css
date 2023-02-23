@@ -33,12 +33,13 @@ p.textCompleted {
   border: 0;
   border-radius: 5px;
   cursor: pointer;
+  transition: box-shadow 1s;
 }
 
 .listTasks footer button:hover {
   color: var(--danger);
-  background-color: var(--gray-00);
-  box-shadow: 0px 0px 10px var(--gray-400);
+  background-color: var(--gray-400);
+  box-shadow: 0px 0px 10px var(--danger);
 }
 
 .listTasks footer {
@@ -72,6 +73,7 @@ p.textCompleted {
   cursor: pointer;
   border-radius: 50%;
   border: 3px solid var(--blue);
+  transition: box-shadow 0.5s;
 }
 
 .checkList input:checked+label::before {

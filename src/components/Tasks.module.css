@@ -40,6 +40,11 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.tasksForm footer button:hover {
+  background-color: var(--blue);
 }
 
 .taskStatus {
@@ -100,9 +105,6 @@
   text-align: center;
 }
 
-.tasksForm footer button:hover {
-  background-color: var(--blue);
-}
 
 .sidebarTask svg {
   margin: 4rem 21.5rem 1rem;
@@ -164,11 +166,13 @@
     height: 2.5rem;
   }
 
-  .created span , .completed span{
+  .created span,
+  .completed span {
     margin-top: 0.5rem
   }
 
-  .created, .completed{
+  .created,
+  .completed {
     display: flex;
     flex-direction: column;
     align-items: center;
